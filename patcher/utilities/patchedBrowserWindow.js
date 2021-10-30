@@ -21,6 +21,9 @@ module.exports = class PatchedBrowserWindow extends BrowserWindow {
         });
 
         win.webContents.preload = origPreload;
+
+        // Opens devtools on startup
+        // win.webContents.openDevTools();
         // REVIEW: Why are we using return in a constructor?
         return win;
     }

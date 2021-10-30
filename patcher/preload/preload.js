@@ -13,7 +13,7 @@ try {
     console.error(err);
 };
 
-global.OcuTweaks.init();
+global.OcuTweaks.start();
 
 // function setPush(obj) {
 //     Object.defineProperty(global.webpackJsonp, "push", obj)

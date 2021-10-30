@@ -1,6 +1,6 @@
 // Modules
 const { mimicOculus, PatchedBrowserWindow } = require("./utilities");
-const {join} = require('path');
+const { join } = require('path');
 const { _load } = require("module");
 
 // Electron
@@ -15,6 +15,7 @@ const oculusPackage = require(join(oculusPath, "package.json"));
 require("./ipc/main");
 
 // Set App User Model IDs
+// REVIEW: Do we need this on Oculus?
 mimicOculus(electron);
 
 const electronExports = new Proxy(electron, {
