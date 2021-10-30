@@ -8,10 +8,10 @@ try {
     const preload = ipcRenderer.sendSync("OCUTWEAKS_GET_PRELOAD");
     if (preload) {
         require(preload);
-        }
+        };
     } catch (err) {
     console.error(err);
-    }
+};
 
 // function setPush(obj) {
 //     Object.defineProperty(global.webpackJsonp, "push", obj)

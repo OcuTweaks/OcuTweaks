@@ -4,7 +4,7 @@ module.exports = (electron) => {
     const appSetAppUserModelId = electron.app.setAppUserModelId;
     function setAppUserModelId(...args) {
         appSetAppUserModelId.apply(this, args);
-        if (patchedOculus) patchedGuilded = true;
+        if (patchedOculus) patchedOculus = true;
     }
 
     electron.app.setAppUserModelId = setAppUserModelId;
