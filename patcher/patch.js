@@ -1,6 +1,6 @@
 // Modules
 const { mimicOculus, PatchedBrowserWindow } = require("./utilities");
-const {join} = require('path')
+const {join} = require('path');
 const { _load } = require("module");
 
 // Electron

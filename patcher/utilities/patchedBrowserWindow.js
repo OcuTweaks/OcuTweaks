@@ -1,8 +1,8 @@
 const { BrowserWindow } = require("electron");
 const { join } = require("path");
+const { electron } = require("process");
 
 const preload = join(__dirname, "../preload/preload.js");
-const preloadSplash = join(__dirname, "../preload/preloadSplash.js");
 
 module.exports = class PatchedBrowserWindow extends BrowserWindow {
     constructor(options) {
@@ -19,7 +19,7 @@ module.exports = class PatchedBrowserWindow extends BrowserWindow {
             get: () => PatchedBrowserWindow.loadUrl.bind(win, origLoadUrl),
             configurable: true
         });
-        
+
         win.webContents.preload = origPreload;
         // REVIEW: Why are we using return in a constructor?
         return win;
