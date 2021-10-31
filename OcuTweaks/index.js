@@ -9,7 +9,7 @@ const version = "0.1.0";
 
 module.exports = class OcuTweaks {
     start() {
-        console.log("OcuTweaks " + version + " is starting...");
+        console.log("[OcuTweaks] OcuTweaks " + version + " is starting...");
 
         // Injecting versionBar and initializing loaders
         const versionBar = document.createElement("div")
@@ -24,8 +24,9 @@ module.exports = class OcuTweaks {
 
                 // Initializing loaders
                 global.pluginLoader.init();
+                console.log("[OcuTweaks] Done!");
             } catch {
-                console.error('Failed to load OcuTweaks!')
+                console.error('[OcuTweaks] Failed to load OcuTweaks!')
                 return;
             }
         } else {
@@ -36,18 +37,19 @@ module.exports = class OcuTweaks {
         }
 
         loadAfterFinished();
-        console.log("Done!");
     };
 
     stop() {
+        console.log("[OcuTweaks] OcuTweaks " + version + " is stopping...");
         // Removing versionBar
         document.getElementById("oc-versionBar").remove();
 
         // Uninitializing loaders
         global.pluginLoader.uninit();
+        console.log("[OcuTweaks] Done!");
     };
 
     hi() {
-        console.log('Why hello there.');
+        console.log('[OcuTweaks] Why hello there.');
     };
 };

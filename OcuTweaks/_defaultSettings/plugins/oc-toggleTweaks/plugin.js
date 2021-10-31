@@ -1,5 +1,3 @@
-const OcuTweaks = require("../../..");
-
 const helpButton = document.querySelector(".navigation-pane__link--help");
 
 const ocToggleButton = document.createElement('li');

@@ -1,6 +1,6 @@
 const { BrowserWindow } = require("electron");
 const { join } = require("path");
-const { electron } = require("process");
+// const { electron } = require("process");
 
 const preload = join(__dirname, "../preload/preload.js");
 
