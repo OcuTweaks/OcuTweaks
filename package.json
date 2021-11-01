@@ -5,6 +5,7 @@
   "main": "none",
   "dependencies": {
     "electron": "^15.3.0",
+    "fs-extra": "^10.0.0",
     "join": "^3.0.0",
     "regedit": "^5.0.0"
   },
