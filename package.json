@@ -5,11 +5,12 @@
   "main": "none",
   "dependencies": {
     "electron": "^15.3.0",
-    "join": "^3.0.0"
+    "join": "^3.0.0",
+    "regedit": "^5.0.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "inject": "node injector/inject.js"
   },
   "repository": {
     "type": "git",
