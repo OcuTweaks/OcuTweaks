@@ -1,4 +1,4 @@
 module.exports = {
-    PatchedBrowserWindow: require("./patchedBrowserWindow"),
-    mimicOculus: require("./mimicOculus"),
+	PatchedBrowserWindow: require("./patchedBrowserWindow"),
+	mimicOculus: require("./mimicOculus"),
 };

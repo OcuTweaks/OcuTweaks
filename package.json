@@ -1,32 +1,32 @@
 {
-  "name": "ocutweaks",
-  "version": "0.1.0",
-  "description": "Client modifications for the Oculus Electron client",
-  "main": "none",
-  "dependencies": {
-    "electron": "^15.3.0",
-    "fs-extra": "^10.0.0",
-    "join": "^3.0.0",
-    "regedit": "^5.0.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "inject": "node injector/inject.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OcuTweaks/OcuTweaks.git"
-  },
-  "keywords": [
-    "oculus",
-    "vr",
-    "electron",
-    "ocutweaks"
-  ],
-  "author": "OcuTweaks",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/OcuTweaks/OcuTweaks/issues"
-  },
-  "homepage": "https://github.com/OcuTweaks/OcuTweaks#readme"
+	"name": "ocutweaks",
+	"version": "0.1.0",
+	"description": "Client modifications for the Oculus Electron client",
+	"main": "none",
+	"dependencies": {
+		"electron": "^15.3.0",
+		"fs-extra": "^10.0.0",
+		"join": "^3.0.0",
+		"regedit": "^5.0.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"inject": "node injector/inject.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/OcuTweaks/OcuTweaks.git"
+	},
+	"keywords": [
+		"oculus",
+		"vr",
+		"electron",
+		"ocutweaks"
+	],
+	"author": "OcuTweaks",
+	"license": "BSD-3-Clause",
+	"bugs": {
+		"url": "https://github.com/OcuTweaks/OcuTweaks/issues"
+	},
+	"homepage": "https://github.com/OcuTweaks/OcuTweaks#readme"
 }
