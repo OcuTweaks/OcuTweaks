@@ -18,7 +18,6 @@
 		"no-use-before-define": ["error"],
 		"camelcase": ["error"],
 		"block-spacing": ["error", "always"],
-		"max-len": ["error", {"code": 80, "ignoreUrls": true}],
 		"semi-style": ["error", "last"]
 	}
 }

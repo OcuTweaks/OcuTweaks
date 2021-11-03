@@ -1,0 +1,11 @@
+{
+	"settingsinjector": {
+		"init": "[settingsInjector] Settings injected!",
+		"uninit": "[settingsInjector] Plugin settings uninjected!"
+	},
+	"tipTool": {
+		"inject": "[tipTool] Tip tool injected!",
+		"uninject": "[tipTool] Tip tool uninjected!",
+		"url": "https://streamelements.com/tip/burritosoft"
+	}
+}

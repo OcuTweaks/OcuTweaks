@@ -1,5 +1,6 @@
 const sidebar = require("../../libraries/sidebar");
 const { shell } = require("electron");
+const strings = require("../../../strings.json");
 
 module.exports = {
 	id: "oc-tipTool",
@@ -7,12 +8,12 @@ module.exports = {
 	init() {
 		var tipButton = sidebar.add("Send a Tip", "oc-sendTip");
 		tipButton.onclick = function () {
-			shell.openExternal("https://streamelements.com/tip/burritosoft");
+			shell.openExternal(strings.tipTool.url);
 		};
-		console.log("[tipTool] Tip button injected!");
+		console.log(strings.tipTool.inject);
 	},
 	uninit() {
 		document.getElementById("oc-sendTip").remove();
-		console.log("[tipTool] Tip button uninjected!");
+		console.log(strings.tipTool.uninject);
 	},
 };

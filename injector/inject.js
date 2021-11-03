@@ -14,9 +14,7 @@ test = regedit
 		const oculusAppAsar = join(oculusPath, "/app");
 
 		if (fs.existsSync(oculusAppAsar)) {
-			console.log(
-				'OcuTweaks is already installed. Run the "npm run uninject" command to uninstall OcuTweaks.'
-			);
+			console.log("OcuTweaks is already installed. Run the \"npm run uninject\" command to uninstall OcuTweaks.");
 		} else {
 			try {
 				// Create app folder and index.js directed towards the patcher script
@@ -54,7 +52,7 @@ test = regedit
 			} catch (e) {
 				console.log(e + "\n");
 				console.log(
-					'Failed to inject into the Oculus app.\nPlease make sure to run the "npm run inject" command in an Administrator command prompt. You can do this by searching "Command Prompt", and clicking "Run as Administrator".' //eslint-disable-line max-len
+					"Failed to inject into the Oculus app.\nPlease make sure to run the \"npm run inject\" command in an Administrator command prompt. You can do this by searching \"Command Prompt\", and clicking \"Run as Administrator\"."
 				);
 			}
 		}
