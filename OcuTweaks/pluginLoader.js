@@ -1,31 +1,34 @@
 const fs = require("fs");
 const { join } = require("path");
 
-const pluginsFolder = join(__dirname, "./settings/plugins");
-const plugins = fs.readdirSync(pluginsFolder, { withFileTypes: true });
+//eslint-disable-next-line no-undef
+const plugins = fs.readdirSync(join(__dirname, "./settings/plugins"), {
+	withFileTypes: true,
+});
 
 module.exports = class pluginLoader {
 	init() {
 		console.log("[pluginLoader] Initializing plugins...");
 		for (let i in plugins) {
-			const plugin = plugins[i];
+			const pl = plugins[i];
 			// Try-catch errors to prevent conflicts with other plugins
 			try {
-				console.log(`[pluginLoader] Found plugin directory '${plugin}'`);
+				console.log(`[pluginLoader] Found plugin directory '${pl}'`);
 				// Gets the path of the plugin
-				const pluginPath = join(__dirname, "./settings/plugins", plugin);
+				//eslint-disable-next-line no-undef
+				const pluginPath = join(__dirname, "./settings/plugins", pl);
 				// Gets path of the plugin JS file
 				const jsPath = join(pluginPath, "plugin.js");
-				// If it doesn't have plugin file, it's not an plugin and ignore it
+				// If it doesn't have plugin file, it's not an plugin: ignore it
 				if (!fs.existsSync(jsPath)) continue;
 				// Require the plugin file
 				let main = require(jsPath);
 				main.init();
-				console.log(`[pluginLoader] Initialized '${plugin}'`);
+				console.log(`[pluginLoader] Initialized '${pl}'`);
 			} catch (e) {
 				console.error(
-					"[pluginLoader] Failed to initialize plugin by ID",
-					plugin.id,
+					"[pluginLoader] Failed to initialize plugin by ID ",
+					pl.id,
 					e
 				);
 			}
@@ -35,24 +38,25 @@ module.exports = class pluginLoader {
 	uninit() {
 		console.log("Uninitializing plugins...");
 		for (let i in plugins) {
-			const plugin = plugins[i];
+			const pl = plugins[i];
 			// Try-catch errors to prevent conflicts with other plugins
 			try {
-				console.log(`[pluginLoader] Found plugin directory '${plugin}'`);
+				console.log(`[pluginLoader] Found plugin directory '${pl}'`);
 				// Gets the path of the plugin
-				const pluginPath = join(__dirname, "./settings/plugins", plugin);
-				// Gets path of the plugin JS file
+				//eslint-disable-next-line no-undef
+				const pluginPath = join(__dirname, "./settings/plugins", pl);
+				// Gets path of the plugin's JS file
 				const jsPath = join(pluginPath, "plugin.js");
-				// If it doesn't have plugin file, it's not an plugin and ignore it
+				// If it doesn't have plugin file, it's not an plugin: ignore it
 				if (!fs.existsSync(jsPath)) continue;
 				// Require the plugin file
 				let main = require(jsPath);
 				main.uninit();
-				console.log(`[pluginLoader] Uninitialized '${plugin}'`);
+				console.log(`[pluginLoader] Uninitialized '${pl}'`);
 			} catch (e) {
 				console.error(
 					"[pluginLoader] Failed to uninitialize plugin by ID",
-					plugin.id,
+					pl.id,
 					e
 				);
 			}

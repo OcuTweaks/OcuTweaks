@@ -28,8 +28,11 @@ module.exports = class OcuTweaks {
 					// Initializing loaders
 					global.pluginLoader.init();
 					console.log("[OcuTweaks] Done!");
-				} catch {
-					console.error("[OcuTweaks] Failed to load OcuTweaks!");
+				} catch (e) {
+					console.error(
+						"[OcuTweaks] Failed to load OcuTweaks! The error is listed below."
+					);
+					console.error(e);
 					return;
 				}
 			} else {

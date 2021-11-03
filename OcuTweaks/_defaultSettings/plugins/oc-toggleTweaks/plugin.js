@@ -3,8 +3,13 @@ const helpButton = document.querySelector(".navigation-pane__link--help");
 const ocToggleButton = document.createElement("li");
 ocToggleButton.className = "sky-dropdown__item";
 ocToggleButton.id = "oc-toggleButton";
-ocToggleButton.innerHTML =
-	'<a tabindex="10" class="sky-dropdown__link link link--clickable"><span class="sky-dropdown__label">Stop OcuTweaks</span></a>';
+ocToggleButton.innerHTML = ` 
+<a tabindex="10" class="sky-dropdown__link link link--clickable">
+	<span class="sky-dropdown__label">
+		Stop OcuTweaks
+	</span>
+</a>
+`;
 ocToggleButton.setAttribute("onclick", "OcuTweaks.stop();");
 
 module.exports = {
@@ -17,12 +22,15 @@ module.exports = {
 		helpButton.onclick = function () {
 			function loadAfterFinished() {
 				if (document.getElementsByClassName("sky-dropdown__item").length > 0) {
+					//eslint-disable-next-line max-len
 					var feedbackButton =
 						document.getElementsByClassName("sky-dropdown__item")[1];
-					if (!!feedbackButton) {
+					if (feedbackButton) {
 						try {
 							insertAfter(ocToggleButton, feedbackButton);
-						} catch {}
+						} catch (e) {
+							console.error(e);
+						}
 					}
 				} else {
 					setTimeout(() => {

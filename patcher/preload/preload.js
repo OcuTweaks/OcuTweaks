@@ -15,6 +15,8 @@ try {
 
 global.OcuTweaks.start();
 
+// Astro | Is this an older version?
+
 // function setPush(obj) {
 //     Object.defineProperty(global.webpackJsonp, "push", obj)
 // }

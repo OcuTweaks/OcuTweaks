@@ -12,6 +12,7 @@ module.exports = class PatchedBrowserWindow extends BrowserWindow {
 		options.webPreferences.preload = preload;
 
 		// REVIEW: Why are we creating an instance of BrowserWindow in the instance of BrowserWindow's subclass? Why not use this instance?
+		// Astro | I guess this is because it would create a circular import?
 		const win = new BrowserWindow(options);
 		const origLoadUrl = win.loadURL.bind(win);
 
@@ -24,6 +25,8 @@ module.exports = class PatchedBrowserWindow extends BrowserWindow {
 
 		// Opens devtools on startup
 		// win.webContents.openDevTools();
+		// Astro | We should probably add this as a setting.
+
 		// REVIEW: Why are we using return in a constructor?
 		return win;
 	}
