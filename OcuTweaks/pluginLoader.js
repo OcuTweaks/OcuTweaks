@@ -24,7 +24,7 @@ module.exports = class pluginLoader {
                 console.log(`[pluginLoader] Initialized '${plugin}'`);
             }
             catch (e) {
-                console.error("[pluginLoader] Failed to initialize plugin by ID", plugin.id, e);
+                console.error("[pluginLoader] Failed to initialize plugin by ID", plugin, e);
             }
         }
     };
@@ -48,7 +48,7 @@ module.exports = class pluginLoader {
                 console.log(`[pluginLoader] Uninitialized '${plugin}'`);
             }
             catch (e) {
-                console.error("[pluginLoader] Failed to uninitialize plugin by ID", plugin.id, e);
+                console.error("[pluginLoader] Failed to uninitialize plugin by ID", plugin, e);
             }
         }
     };
