@@ -6,50 +6,56 @@ const version = "0.0.1a";
 
 // OcuTweaks's full manager's class.
 
-
 module.exports = class OcuTweaks {
-    start() {
-        console.log("[OcuTweaks] OcuTweaks " + version + " is starting...");
+	start() {
+		console.log("[OcuTweaks] OcuTweaks " + version + " is starting...");
 
-        // Injecting versionBar and initializing loaders
-        const versionBar = document.createElement("div")
-        versionBar.id = 'oc-versionBar';
-        versionBar.innerHTML = 'OcuTweaks ' + version;
+		// Injecting versionBar and initializing loaders
+		const versionBar = document.createElement("div");
+		versionBar.id = "oc-versionBar";
+		versionBar.innerHTML = "OcuTweaks " + version;
 
-        function loadAfterFinished() {
-        if(document.getElementsByClassName('command-bar__window-title').length > 0) {
-            const titlebar = document.getElementsByClassName('command-bar__window-title')
-            try {
-                titlebar[0].appendChild(versionBar)
+		function loadAfterFinished() {
+			if (
+				document.getElementsByClassName("command-bar__window-title").length > 0
+			) {
+				const titlebar = document.getElementsByClassName(
+					"command-bar__window-title"
+				);
+				try {
+					titlebar[0].appendChild(versionBar);
 
-                // Initializing loaders
-                global.pluginLoader.init();
-                console.log("[OcuTweaks] Done!");
-            } catch {
-                console.error('[OcuTweaks] Failed to load OcuTweaks!')
-                return;
-            }
-        } else {
-            setTimeout(() => {
-                loadAfterFinished();                
-                }, 1);
-            }
-        }
+					// Initializing loaders
+					global.pluginLoader.init();
+					console.log("[OcuTweaks] Done!");
+				} catch (e) {
+					console.error(
+						"[OcuTweaks] Failed to load OcuTweaks! The error is listed below."
+					);
+					console.error(e);
+					return;
+				}
+			} else {
+				setTimeout(() => {
+					loadAfterFinished();
+				}, 1);
+			}
+		}
 
-        loadAfterFinished();
-    };
+		loadAfterFinished();
+	}
 
-    stop() {
-        console.log("[OcuTweaks] OcuTweaks " + version + " is stopping...");
-        // Removing versionBar
-        document.getElementById("oc-versionBar").remove();
+	stop() {
+		console.log("[OcuTweaks] OcuTweaks " + version + " is stopping...");
+		// Removing versionBar
+		document.getElementById("oc-versionBar").remove();
 
-        // Uninitializing loaders
-        global.pluginLoader.uninit();
-        console.log("[OcuTweaks] Done!");
-    };
+		// Uninitializing loaders
+		global.pluginLoader.uninit();
+		console.log("[OcuTweaks] Done!");
+	}
 
-    hi() {
-        console.log('[OcuTweaks] Why hello there.');
-    };
+	hi() {
+		console.log("[OcuTweaks] Why hello there.");
+	}
 };

@@ -1,0 +1,23 @@
+{
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es2021": true
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 12
+	},
+	"rules": {
+		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"],
+		"dot-location": ["error", "property"],
+		"no-floating-decimal": ["error"],
+		"no-use-before-define": ["error"],
+		"camelcase": ["error"],
+		"block-spacing": ["error", "always"],
+		"semi-style": ["error", "last"]
+	}
+}

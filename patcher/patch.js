@@ -1,6 +1,6 @@
 // Modules
 const { mimicOculus, PatchedBrowserWindow } = require("./utilities");
-const { join, dirname } = require('path');
+const { join, dirname } = require("path");
 const { _load } = require("module");
 
 // Electron
@@ -20,14 +20,14 @@ mimicOculus(electron);
 
 // Patching all BrowserWindows with our preload script
 const electronExports = new Proxy(electron, {
-    get(target, prop) {
-        switch (prop) {
-            case "BrowserWindow":
-                return PatchedBrowserWindow;
-            default:
-                return target[prop];
-        }
-    },
+	get(target, prop) {
+		switch (prop) {
+			case "BrowserWindow":
+				return PatchedBrowserWindow;
+			default:
+				return target[prop];
+		}
+	},
 });
 
 delete require.cache[electronPath].exports;

@@ -3,17 +3,19 @@ const { ipcRenderer } = require("electron");
 const OcuTweaks = require("../../OcuTweaks");
 
 try {
-    global.OcuTweaks = new OcuTweaks();
-  
-    const preload = ipcRenderer.sendSync("OCUTWEAKS_GET_PRELOAD");
-    if (preload) {
-        require(preload);
-        };
-    } catch (err) {
-    console.error(err);
-};
+	global.OcuTweaks = new OcuTweaks();
+
+	const preload = ipcRenderer.sendSync("OCUTWEAKS_GET_PRELOAD");
+	if (preload) {
+		require(preload);
+	}
+} catch (err) {
+	console.error(err);
+}
 
 global.OcuTweaks.start();
+
+// Astro | Is this an older version?
 
 // function setPush(obj) {
 //     Object.defineProperty(global.webpackJsonp, "push", obj)

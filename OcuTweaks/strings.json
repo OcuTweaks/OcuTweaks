@@ -1,0 +1,17 @@
+{
+	"settingsinjector": {
+		"init": "[settingsInjector] Settings injected!",
+		"uninit": "[settingsInjector] Plugin settings uninjected!"
+	},
+	"tipTool": {
+		"inject": "[tipTool] Tip tool injected!",
+		"uninject": "[tipTool] Tip tool uninjected!",
+		"url": "https://streamelements.com/tip/burritosoft"
+	},
+	"pluginLoader": {
+		"initStart": "[pluginLoader] Initializing plugins...",
+		"initFail": "[pluginLoader] Failed to initialize plugin by ID ",
+		"uninitStart": "Uninitializing plugins...",
+		"uninitFail": "[pluginLoader] Failed to uninitialize plugin by ID "
+	}
+}

@@ -1,8 +1,11 @@
 const fs = require("fs");
-const { join } = require('path');
+const { join } = require("path");
+const strings = require("./strings.json");
 
-const pluginsFolder = join(__dirname, "./settings/plugins");
-const plugins = fs.readdirSync(pluginsFolder, { withFileTypes: true });
+//eslint-disable-next-line no-undef
+const plugins = fs.readdirSync(join(__dirname, "./settings/plugins"), {
+	withFileTypes: true,
+});
 
 module.exports = class pluginLoader {
     init() {
