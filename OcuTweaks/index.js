@@ -2,7 +2,7 @@
 const pluginLoader = require("./pluginLoader");
 global.pluginLoader = new pluginLoader();
 
-const version = "0.1.0";
+const version = "0.0.1a";
 
 // OcuTweaks's full manager's class.
 
